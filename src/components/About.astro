@@ -1,0 +1,21 @@
+---
+import type { Dictionary } from '../i18n';
+
+type Props = {
+  t: Dictionary['about'];
+};
+
+const { t } = Astro.props;
+---
+
+<section id="sobre" class="scroll-mt-24 border-t border-border py-20 md:py-28">
+  <div class="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-[0.9fr_1.1fr] md:items-start md:gap-16 md:px-8">
+    <div>
+      <h2 class="font-display text-3xl tracking-tight text-ink md:text-4xl">{t.title}</h2>
+      <p class="mt-4 font-display text-xl text-accent md:text-2xl">{t.subtitle}</p>
+    </div>
+    <div class="space-y-5 text-base leading-relaxed text-ink-muted md:text-lg">
+      {t.body.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+---
+import type { Dictionary, Locale } from '../i18n';
+import { localePath } from '../i18n';
+
+type Props = {
+  locale: Locale;
+  t: Dictionary;
+};
+
+const { locale, t } = Astro.props;
+const year = new Date().getFullYear();
+const home = localePath(locale);
+---
+
+<footer class="border-t border-border py-10">
+  <div class="mx-auto flex max-w-6xl flex-col gap-6 px-5 md:flex-row md:items-center md:justify-between md:px-8">
+    <div>
+      <a href={home} class="font-display text-lg text-ink">Black Napkin</a>
+      <p class="mt-1 text-sm text-ink-muted">{t.footer.tagline}</p>
+    </div>
+    <p class="text-sm text-ink-muted">
+      © {year} Black Napkin. {t.footer.rights}
+    </p>
+  </div>
+</footer>

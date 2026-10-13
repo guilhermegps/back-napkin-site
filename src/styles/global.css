@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(html:not(.light) *));
+
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-ink: var(--accent-ink);
+}
+
+:root {
+  color-scheme: dark;
+  --ink: #e8efea;
+  --ink-muted: #9aa89e;
+  --surface: #0d1110;
+  --surface-elevated: #161c1a;
+  --border: rgba(232, 239, 234, 0.12);
+  --accent: #3ecf9a;
+  --accent-soft: rgba(62, 207, 154, 0.14);
+  --accent-ink: #062016;
+  --hero-glow: rgba(62, 207, 154, 0.16);
+  --grain: rgba(232, 239, 234, 0.03);
+}
+
+html.light {
+  color-scheme: light;
+  --ink: #15201c;
+  --ink-muted: #53635c;
+  --surface: #f3f6f4;
+  --surface-elevated: #ffffff;
+  --border: rgba(21, 32, 28, 0.12);
+  --accent: #0f8f66;
+  --accent-soft: rgba(15, 143, 102, 0.12);
+  --accent-ink: #f3fffa;
+  --hero-glow: rgba(15, 143, 102, 0.12);
+  --grain: rgba(21, 32, 28, 0.035);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  background: var(--surface);
+  color: var(--ink);
+  text-rendering: optimizeLegibility;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.55;
+  background-image:
+    radial-gradient(circle at 18% 12%, var(--hero-glow), transparent 34%),
+    radial-gradient(circle at 82% 0%, rgba(90, 140, 120, 0.12), transparent 28%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  background-size: auto, auto, 180px 180px;
+  mix-blend-mode: soft-light;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes draw-line {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-rise {
+  animation: rise-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fade {
+  animation: fade-in 1s ease both;
+}
+
+.animate-draw {
+  transform-origin: left center;
+  animation: draw-line 1s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+}

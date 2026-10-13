@@ -1,0 +1,57 @@
+---
+import Icons from './icons/Icons.astro';
+import type { Dictionary } from '../i18n';
+
+type Props = {
+  labels: Dictionary['theme'];
+};
+
+const { labels } = Astro.props;
+---
+
+<button
+  type="button"
+  id="theme-toggle"
+  class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface-elevated text-ink transition hover:border-accent hover:text-accent"
+  aria-label={labels.toLight}
+  data-label-light={labels.toLight}
+  data-label-dark={labels.toDark}
+>
+  <span class="theme-icon-sun hidden">
+    <Icons name="sun" class="h-4 w-4" />
+  </span>
+  <span class="theme-icon-moon">
+    <Icons name="moon" class="h-4 w-4" />
+  </span>
+</button>
+
+<script>
+  function syncThemeToggle() {
+    const button = document.getElementById('theme-toggle');
+    if (!(button instanceof HTMLButtonElement)) return;
+
+    const isLight = document.documentElement.classList.contains('light');
+    const sun = button.querySelector('.theme-icon-sun');
+    const moon = button.querySelector('.theme-icon-moon');
+    sun?.classList.toggle('hidden', !isLight);
+    moon?.classList.toggle('hidden', isLight);
+    button.setAttribute(
+      'aria-label',
+      isLight ? button.dataset.labelDark || '' : button.dataset.labelLight || '',
+    );
+  }
+
+  function setTheme(theme: 'light' | 'dark') {
+    document.documentElement.classList.toggle('light', theme === 'light');
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem('theme', theme);
+    syncThemeToggle();
+  }
+
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    const next = document.documentElement.classList.contains('light') ? 'dark' : 'light';
+    setTheme(next);
+  });
+
+  syncThemeToggle();
+</script>

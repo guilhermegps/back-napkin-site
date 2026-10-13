@@ -1,0 +1,65 @@
+---
+import type { Dictionary, Locale } from '../i18n';
+import { localePath } from '../i18n';
+import Icons from './icons/Icons.astro';
+
+type Props = {
+  locale: Locale;
+  t: Dictionary['hero'];
+};
+
+const { locale, t } = Astro.props;
+const home = localePath(locale);
+---
+
+<section class="relative overflow-hidden">
+  <div class="mx-auto grid max-w-6xl gap-10 px-5 pb-20 pt-14 md:grid-cols-[1.1fr_0.9fr] md:items-end md:gap-14 md:px-8 md:pb-28 md:pt-20">
+    <div>
+      <p class="animate-fade font-display text-4xl tracking-tight text-ink sm:text-5xl md:text-6xl lg:text-7xl">
+        {t.brand}
+      </p>
+      <div class="animate-draw mt-5 h-px w-28 bg-accent"></div>
+      <h1 class="animate-rise mt-6 max-w-xl font-display text-2xl leading-tight text-ink sm:text-3xl md:text-4xl" style="animation-delay: 0.1s">
+        {t.headline}
+      </h1>
+      <p class="animate-rise mt-5 max-w-xl text-base leading-relaxed text-ink-muted md:text-lg" style="animation-delay: 0.2s">
+        {t.subtitle}
+      </p>
+      <div class="animate-rise mt-8 flex flex-wrap gap-3" style="animation-delay: 0.3s">
+        <a
+          href={`${home}#contato`}
+          class="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-ink transition hover:brightness-110"
+        >
+          {t.ctaPrimary}
+          <Icons name="arrow" class="h-4 w-4" />
+        </a>
+        <a
+          href={`${home}#servicos`}
+          class="inline-flex items-center rounded-full border border-border bg-surface-elevated px-5 py-3 text-sm font-semibold text-ink transition hover:border-accent"
+        >
+          {t.ctaSecondary}
+        </a>
+      </div>
+    </div>
+
+    <div class="animate-rise relative min-h-[280px] md:min-h-[360px]" style="animation-delay: 0.15s" aria-hidden="true">
+      <div class="absolute inset-0 rounded-[2rem] border border-border bg-surface-elevated/70 shadow-[0_30px_80px_rgba(0,0,0,0.25)]">
+        <div class="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_30%_20%,var(--hero-glow),transparent_45%),linear-gradient(160deg,transparent,rgba(62,207,154,0.08))]"></div>
+        <div class="absolute left-8 top-8 right-8 bottom-8 rounded-[1.4rem] border border-dashed border-accent/40"></div>
+        <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 p-8 text-center">
+          <img
+            src="/img/logo-bn.png"
+            alt=""
+            width="96"
+            height="96"
+            class="h-24 w-24 rounded-2xl border border-border object-cover"
+          />
+          <p class="font-display text-2xl tracking-tight text-ink">BN</p>
+          <p class="max-w-xs text-sm leading-relaxed text-ink-muted">
+            sketch → ship
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,109 @@
+---
+import type { Dictionary, Locale } from '../i18n';
+import { localePath } from '../i18n';
+import Icons from './icons/Icons.astro';
+import LangSwitch from './LangSwitch.astro';
+import ThemeToggle from './ThemeToggle.astro';
+
+type Props = {
+  locale: Locale;
+  t: Dictionary;
+};
+
+const { locale, t } = Astro.props;
+const home = localePath(locale);
+const links = [
+  { href: `${home}#servicos`, label: t.nav.services },
+  { href: `${home}#sobre`, label: t.nav.about },
+  { href: `${home}#portfolio`, label: t.nav.portfolio },
+  { href: `${home}#contato`, label: t.nav.contact },
+];
+---
+
+<header class="sticky top-0 z-40 border-b border-border/80 bg-surface/80 backdrop-blur-md">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 md:px-8">
+    <a href={home} class="group flex items-center gap-3">
+      <img
+        src="/img/logo-bn.png"
+        alt="Black Napkin"
+        width="40"
+        height="40"
+        class="h-10 w-10 rounded-md border border-border object-cover"
+      />
+      <span class="font-display text-lg tracking-tight text-ink transition group-hover:text-accent md:text-xl">
+        Black Napkin
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-7 md:flex" aria-label="Primary">
+      {
+        links.map((link) => (
+          <a href={link.href} class="text-sm font-medium text-ink-muted transition hover:text-ink">
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <LangSwitch locale={locale} labels={t.lang} />
+      <ThemeToggle labels={t.theme} />
+      <button
+        type="button"
+        id="menu-toggle"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface-elevated text-ink md:hidden"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label={t.menu}
+      >
+        <span class="menu-open">
+          <Icons name="menu" class="h-4 w-4" />
+        </span>
+        <span class="menu-close hidden">
+          <Icons name="close" class="h-4 w-4" />
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <nav
+    id="mobile-nav"
+    class="hidden border-t border-border px-5 py-4 md:hidden"
+    aria-label="Mobile"
+  >
+    <ul class="flex flex-col gap-3">
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.href} class="block py-1 text-base font-medium text-ink" data-mobile-link>
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('mobile-nav');
+  const openIcon = toggle?.querySelector('.menu-open');
+  const closeIcon = toggle?.querySelector('.menu-close');
+
+  function setOpen(open: boolean) {
+    nav?.classList.toggle('hidden', !open);
+    openIcon?.classList.toggle('hidden', open);
+    closeIcon?.classList.toggle('hidden', !open);
+    toggle?.setAttribute('aria-expanded', String(open));
+  }
+
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    setOpen(open);
+  });
+
+  document.querySelectorAll('[data-mobile-link]').forEach((link) => {
+    link.addEventListener('click', () => setOpen(false));
+  });
+</script>

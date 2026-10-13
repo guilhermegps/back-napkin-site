@@ -1,0 +1,36 @@
+---
+import About from './About.astro';
+import Contact from './Contact.astro';
+import Footer from './Footer.astro';
+import Header from './Header.astro';
+import Hero from './Hero.astro';
+import Portfolio from './Portfolio.astro';
+import Services from './Services.astro';
+import { getDictionary, type Locale } from '../i18n';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+type Props = {
+  locale: Locale;
+};
+
+const { locale } = Astro.props;
+const t = getDictionary(locale);
+---
+
+<BaseLayout locale={locale} t={t}>
+  <a
+    href="#conteudo"
+    class="sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:m-0 focus:h-auto focus:w-auto focus:overflow-visible focus:rounded-full focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-accent-ink focus:whitespace-nowrap"
+  >
+    {t.skip}
+  </a>
+  <Header locale={locale} t={t} />
+  <main id="conteudo">
+    <Hero locale={locale} t={t.hero} />
+    <Services t={t.services} />
+    <About t={t.about} />
+    <Portfolio t={t.portfolio} />
+    <Contact t={t.contact} />
+  </main>
+  <Footer locale={locale} t={t} />
+</BaseLayout>
