@@ -4,7 +4,7 @@ export const en: Dictionary = {
   meta: {
     title: 'Black Napkin — Software development & IT consulting',
     description:
-      'Software development and IT consulting. From napkin sketch to production-ready product.',
+      'Software development and IT consulting in Brasília. Java/Spring and microservices specialists — for large institutions and small businesses.',
   },
   skip: 'Skip to content',
   menu: 'Menu',
@@ -28,74 +28,79 @@ export const en: Dictionary = {
     brand: 'Black Napkin',
     headline: 'From napkin sketch to production software.',
     subtitle:
-      'We build systems and guide IT decisions with technical clarity, outcome focus, and long-term partnership.',
+      'Tailored solutions for banks and large organizations — and for stationery shops, gyms, and growing businesses. Full development cycle, with deep Java backend expertise.',
     ctaPrimary: 'Talk to us',
     ctaSecondary: 'See services',
   },
   services: {
     title: 'Services',
-    subtitle: 'Technical delivery with a business lens.',
+    subtitle: 'From discovery to deploy — the same discipline for complex programs and lean operations.',
     items: [
       {
         title: 'Software development',
         description:
-          'Custom web apps, APIs, and systems — from discovery to deploy, with maintainable code and continuous evolution.',
+          'Full cycle: analysis, implementation, testing, code review, deployment, and support. Specialized in Java and Spring, with back-end and full-stack delivery.',
       },
       {
-        title: 'IT consulting',
+        title: 'Consulting & technical leadership',
         description:
-          'Architecture, modernization, cloud, and engineering practices that reduce risk and speed up decisions.',
+          'Architecture, standards, mentoring, and continuous quality improvement — supporting technical decisions in corporate environments and smaller businesses.',
       },
       {
-        title: 'Digital products',
+        title: 'Infrastructure & high availability',
         description:
-          'MVPs, prototyping, and product evolution with clear prioritization and short validation loops.',
+          'Environments, cloud, observability, and operating practices for stable, secure systems ready to scale.',
       },
       {
-        title: 'Integrations & automation',
+        title: 'Integrations, APIs & generative AI',
         description:
-          'We connect systems, data, and processes to remove operational friction and unlock scale.',
+          'Microservices, RESTful APIs, and system integration. We also apply LLMs and Human-in-the-Loop practices to optimize the SDLC with quality and security.',
       },
     ],
   },
   about: {
     title: 'About Black Napkin',
     subtitle: 'Well-drawn ideas become software that works.',
+    role: 'Senior Software Development Engineer',
     body: [
       'We are a software development and IT consulting company. Our name comes from that classic moment: sketching a solution on a napkin — then making it real with solid engineering.',
-      'We partner with teams and business leaders to turn technical complexity into predictable delivery, clear interfaces, and systems built to grow.',
+      'With more than 12 years of experience developing, evolving, and supporting large-scale corporate systems, we work with large, mid-size, and small companies. We specialize in Java and the Spring ecosystem, delivering back-end and full-stack solutions, microservices architecture, RESTful APIs, system integration, databases, and high-availability environments.',
+      'Our background includes strong work in financial and corporate sectors, plus international projects. We take part in the full software cycle — from analysis and solution design to implementation, testing, code review, deployment, and support — with experience in technical leadership, standards, mentoring, and continuous quality improvement.',
+      'We also apply Generative AI to software development: LLMs, prompt and context engineering, and Human-in-the-Loop practices to optimize the SDLC, always focused on quality, security, performance, and maintainability.',
     ],
+    imageAlt: 'Software engineer working in a modern workspace',
   },
   portfolio: {
     title: 'Portfolio',
-    subtitle: 'A sample of the challenges we solve.',
+    subtitle: 'Examples of the challenges we solve — from mission-critical to day-to-day operations.',
     cases: [
       {
-        title: 'Operations platform',
-        tag: 'Web product',
+        title: 'Critical systems & operations',
+        tag: 'Enterprise',
         description:
-          'Internal system to orchestrate critical workflows, with near real-time dashboards and well-defined access roles.',
+          'Internal platforms and high-responsibility workflows, with security, access roles, and dashboards for continuous operations.',
       },
       {
-        title: 'API modernization',
+        title: 'Modernization & APIs',
         tag: 'Architecture',
         description:
-          'Restructuring legacy integrations into more stable, observable, and evolvable services.',
+          'Restructuring integrations and backends into more stable, observable, and evolvable services.',
       },
       {
-        title: 'Customer portal',
-        tag: 'Digital experience',
+        title: 'Tailored digital presence',
+        tag: 'Local business',
         description:
-          'Responsive digital channel for self-service, request tracking, and team communication.',
+          'Portals, sites, and lean systems for small and mid-size companies — focused on clarity, self-service, and practical results.',
       },
     ],
   },
   contact: {
     title: 'Contact',
-    subtitle: 'Tell us the challenge. We will help shape the next step.',
+    subtitle: 'Tell us the challenge — from a bank to a local shop. We will help shape the next step.',
     email: 'Email',
     phone: 'Phone',
     whatsapp: 'WhatsApp',
+    address: 'Address',
   },
   footer: {
     rights: 'All rights reserved.',

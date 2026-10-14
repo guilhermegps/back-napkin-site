@@ -4,7 +4,7 @@ export const es: Dictionary = {
   meta: {
     title: 'Black Napkin — Desarrollo de software y consultoría TI',
     description:
-      'Desarrollo de software y consultoría en TI. De la idea en la servilleta al producto en producción.',
+      'Desarrollo de software y consultoría en TI en Brasilia. Especialistas en Java/Spring y microservicios — para grandes instituciones y pequeñas empresas.',
   },
   skip: 'Ir al contenido',
   menu: 'Menú',
@@ -28,74 +28,79 @@ export const es: Dictionary = {
     brand: 'Black Napkin',
     headline: 'De la idea en la servilleta al software en producción.',
     subtitle:
-      'Desarrollamos sistemas y orientamos decisiones de TI con claridad técnica, foco en resultados y alianza a largo plazo.',
+      'Soluciones a medida para bancos y grandes organizaciones — y también para papelerías, gimnasios y negocios en crecimiento. Ciclo completo de desarrollo, con especialidad en backend Java.',
     ctaPrimary: 'Hablar con nosotros',
     ctaSecondary: 'Ver servicios',
   },
   services: {
     title: 'Servicios',
-    subtitle: 'Entrega técnica con visión de negocio.',
+    subtitle: 'Del discovery al deploy — la misma disciplina para programas complejos y operaciones ágiles.',
     items: [
       {
         title: 'Desarrollo de software',
         description:
-          'Aplicaciones web, APIs y sistemas a medida — del discovery al deploy, con código sostenible y evolución continua.',
+          'Ciclo completo: análisis, implementación, pruebas, code review, despliegue y soporte. Especialización en Java y Spring, con entrega back-end y full stack.',
       },
       {
-        title: 'Consultoría en TI',
+        title: 'Consultoría y liderazgo técnico',
         description:
-          'Arquitectura, modernización, cloud y prácticas de ingeniería para reducir riesgo y acelerar decisiones.',
+          'Arquitectura, estándares, mentoría y mejora continua de la calidad — apoyando decisiones técnicas en entornos corporativos y en negocios más pequeños.',
       },
       {
-        title: 'Productos digitales',
+        title: 'Infraestructura y alta disponibilidad',
         description:
-          'MVP, prototipado y evolución de producto con priorización clara y ciclos cortos de validación.',
+          'Entornos, cloud, observabilidad y prácticas de operación para sistemas estables, seguros y listos para crecer.',
       },
       {
-        title: 'Integraciones y automatización',
+        title: 'Integraciones, APIs e IA generativa',
         description:
-          'Conectamos sistemas, datos y procesos para eliminar fricción operativa y ganar escala.',
+          'Microservicios, APIs RESTful e integración entre sistemas. También aplicamos LLMs y prácticas Human-in-the-Loop para optimizar el SDLC con calidad y seguridad.',
       },
     ],
   },
   about: {
     title: 'Sobre Black Napkin',
     subtitle: 'Las ideas bien dibujadas se convierten en software que funciona.',
+    role: 'Senior Software Development Engineer',
     body: [
       'Somos una empresa de desarrollo de software y consultoría en TI. Nuestro nombre nace de ese momento clásico: bosquejar una solución en una servilleta — y luego hacerla real con ingeniería sólida.',
-      'Trabajamos junto a equipos y líderes de negocio para transformar complejidad técnica en entregas previsibles, interfaces claras y sistemas listos para crecer.',
+      'Con más de 12 años de experiencia en el desarrollo, evolución y soporte de sistemas corporativos de gran porte, trabajamos con grandes, medianas y pequeñas empresas. Especialización sólida en Java y el ecosistema Spring, con actuación back-end y full stack, arquitectura de microservicios, APIs RESTful, integración entre sistemas, bases de datos y entornos de alta disponibilidad.',
+      'Nuestra trayectoria incluye fuerte presencia en los sectores financiero y corporativo, además de proyectos internacionales. Participamos en todo el ciclo de software — del análisis y definición de soluciones a la implementación, pruebas, code review, despliegue y soporte — con experiencia en liderazgo técnico, definición de estándares, mentoría y mejora continua de la calidad.',
+      'También aplicamos Inteligencia Artificial Generativa al desarrollo: LLMs, ingeniería de prompts y de contexto, y prácticas Human-in-the-Loop para optimizar el SDLC, siempre con foco en calidad, seguridad, rendimiento y mantenibilidad.',
     ],
+    imageAlt: 'Ingeniero de software trabajando en un entorno moderno',
   },
   portfolio: {
     title: 'Portafolio',
-    subtitle: 'Algunos ejemplos del tipo de desafío que resolvemos.',
+    subtitle: 'Ejemplos del tipo de desafío que resolvemos — de lo crítico a la operación diaria.',
     cases: [
       {
-        title: 'Plataforma de operaciones',
-        tag: 'Producto web',
+        title: 'Sistemas críticos y operaciones',
+        tag: 'Enterprise',
         description:
-          'Sistema interno para orquestar flujos críticos, con paneles casi en tiempo real y roles de acceso bien definidos.',
+          'Plataformas internas y flujos de alta responsabilidad, con seguridad, roles de acceso y paneles para operación continua.',
       },
       {
-        title: 'Modernización de APIs',
+        title: 'Modernización y APIs',
         tag: 'Arquitectura',
         description:
-          'Reorganización de integraciones legacy en servicios más estables, observables y fáciles de evolucionar.',
+          'Reorganización de integraciones y backends en servicios más estables, observables y fáciles de evolucionar.',
       },
       {
-        title: 'Portal de clientes',
-        tag: 'Experiencia digital',
+        title: 'Presencia digital a medida',
+        tag: 'Negocios locales',
         description:
-          'Canal digital responsivo para autoservicio, seguimiento de solicitudes y comunicación con el equipo.',
+          'Portales, sitios y sistemas ágiles para pequeñas y medianas empresas — con foco en claridad, autoservicio y resultado práctico.',
       },
     ],
   },
   contact: {
     title: 'Contacto',
-    subtitle: 'Cuéntanos el desafío. Te ayudamos a diseñar el siguiente paso.',
+    subtitle: 'Cuéntanos el desafío — de un banco a un negocio local. Te ayudamos a diseñar el siguiente paso.',
     email: 'Correo',
     phone: 'Teléfono',
     whatsapp: 'WhatsApp',
+    address: 'Dirección',
   },
   footer: {
     rights: 'Todos los derechos reservados.',

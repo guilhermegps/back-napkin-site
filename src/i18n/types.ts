@@ -41,7 +41,9 @@ export type Dictionary = {
   about: {
     title: string;
     subtitle: string;
+    role: string;
     body: string[];
+    imageAlt: string;
   };
   portfolio: {
     title: string;
@@ -58,6 +60,7 @@ export type Dictionary = {
     email: string;
     phone: string;
     whatsapp: string;
+    address: string;
   };
   footer: {
     rights: string;

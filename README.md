@@ -31,7 +31,8 @@ npm run preview
 
 - Textos / traduções: `src/i18n/`
 - Contatos (e-mail, telefone, WhatsApp): `src/data/contact.ts`
-- Logos: `public/img/`
+- Mídia usada no site: `src/data/media.ts` → arquivos em `public/img/`
+- Banco de opções (originais): `img/` (`working-team`, `office`, `systems`, `logos`)
 
 ## Deploy
 

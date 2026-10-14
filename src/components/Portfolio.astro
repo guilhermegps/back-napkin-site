@@ -1,4 +1,5 @@
 ---
+import { media } from '../data/media';
 import type { Dictionary } from '../i18n';
 
 type Props = {
@@ -17,11 +18,18 @@ const { t } = Astro.props;
 
     <ul class="mt-12 grid gap-5 md:grid-cols-3">
       {
-        t.cases.map((item) => (
+        t.cases.map((item, index) => (
           <li class="flex flex-col overflow-hidden rounded-2xl border border-border bg-surface-elevated/70">
-            <div class="relative aspect-[16/10] bg-[linear-gradient(135deg,var(--accent-soft),transparent_55%),linear-gradient(160deg,#1a2420,var(--surface))]">
-              <div class="absolute inset-0 opacity-40" style="background-image: radial-gradient(circle at 20% 30%, var(--accent), transparent 28%), radial-gradient(circle at 80% 70%, rgba(90,140,120,0.5), transparent 32%);"></div>
-              <span class="absolute bottom-4 left-4 rounded-full bg-surface/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent backdrop-blur">
+            <div class="relative aspect-[16/10] overflow-hidden bg-surface">
+              <img
+                src={media.cases[index]}
+                alt=""
+                width="1444"
+                height="822"
+                class="h-full w-full object-cover object-top"
+                loading="lazy"
+              />
+              <span class="absolute bottom-4 left-4 rounded-full bg-surface/85 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent backdrop-blur">
                 {item.tag}
               </span>
             </div>

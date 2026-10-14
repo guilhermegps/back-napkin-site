@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { media } from '../data/media';
 import { htmlLang, localePath, type Dictionary, type Locale } from '../i18n';
 
 type Props = {
@@ -9,6 +10,7 @@ type Props = {
 
 const { locale, t } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(media.og, Astro.site);
 const alternates: Array<{ locale: Locale; hrefLang: string }> = [
   { locale: 'pt-br', hrefLang: 'pt-BR' },
   { locale: 'en', hrefLang: 'en' },
@@ -27,7 +29,14 @@ const alternates: Array<{ locale: Locale; hrefLang: string }> = [
     <meta property="og:description" content={t.meta.description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content={htmlLang(locale).replace('-', '_')} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={t.meta.title} />
+    <meta name="twitter:description" content={t.meta.description} />
+    <meta name="twitter:image" content={ogImage} />
     <link rel="canonical" href={canonical} />
     {
       alternates.map((item) => (
